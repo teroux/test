@@ -1,0 +1,7 @@
+# Here is a template example. Refer to http://www.fifi.org/doc/debconf-doc/tutorial.html#AEN34
+
+Template: #PACKAGE_NAME#/template_item
+Type: #type
+Description: #Question asked.?..
+ #Description of the question
+

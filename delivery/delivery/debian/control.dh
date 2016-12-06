@@ -1,0 +1,13 @@
+Source: #PACKAGE_NAME#
+Section: contrib/net
+Priority: optional
+Maintainer: Ymagis
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.6.1
+
+Package: #PACKAGE_NAME#
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Ymagis toto
+ toto
+

@@ -1,0 +1,42 @@
+#!/bin/bash
+set -e
+
+# postrm script for #PACKAGE_NAME# 
+#
+# see: dh_installdeb(1)
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+#
+
+APP_NAME="#APP_NAME#"
+PACKAGE_NAME="#PACKAGE_NAME#"
+
+## Debconf initialization
+# Use this to activate debug ;)
+#export DEBCONF_DEBUG="developer"
+#. /usr/share/debconf/confmodule
+
+case "$1" in
+	remove)
+		# Add bash commands to perform extra remove actions...
+    	;;
+
+	purge)
+    	;;
+
+	*)
+		# Do more stuff
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0;

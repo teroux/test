@@ -1,0 +1,44 @@
+#!/bin/bash
+set -e
+
+# 2011-12-02 David Goncalves
+#            Pre-Install script for 'site hosting' packages that uses
+#            debconf to choose local database infos.
+#            Warning : Don't forget to scramble the password in 'postinst' script.
+#
+# 2011-12-05 David Giangiacomo & Christophe Cassagnabere
+#			 Adaptation pour architecture CakePHP
+#
+
+# !!!! WARNING !!!!!
+# This script is executed BEFORE the package is unpacked, thus no dependency check has been run yet.
+# This file should be as minimal as possible.
+
+APP_NAME="#APP_NAME#"
+PACKAGE_NAME="#PACKAGE_NAME#"
+
+## Debconf initialization
+# Use this to activate debug ;)
+#export DEBCONF_DEBUG="developer"
+#. /usr/share/debconf/confmodule
+
+case "$1" in
+    install)
+	## Keep it minimal !!!!
+	# Add bash commands here
+    ;;
+
+    upgrade)
+	## Keep it minimal !!!!
+	# Add bash commands here
+    ;;
+esac
+
+## Debconf hangs if a postinst script starts a daemon. debconf must be stopped inserting a db_stop after the debconf code
+## Uncomment if you have restarted a service (init.d) in this script
+
+# db_stop
+
+#DEBHELPER#
+
+exit 0;

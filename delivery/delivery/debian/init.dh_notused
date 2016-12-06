@@ -1,0 +1,63 @@
+# This file contains the commands to start and stop a service
+# The start-stop-daemon can be used.
+# Beware of children processes when stopping the service.
+
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          #PACKAGE_NAME#
+# Required-Start:    $local_fs $remote_fs $network
+# Required-Stop:     $local_fs $remote_fs $network
+# Should-Start:      $named
+# Should-Stop:       $named
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start #APP_NAME#
+# Description:       ### TO BE FILLED
+### END INIT INFO
+
+set -e
+
+PID_FILE=/var/run/#PACKAGE_NAME#.pid
+RUN_AS=#USER#:#GROUP#
+
+. /lib/lsb/init-functions
+
+start() {
+    log_daemon_msg "Starting Ymaship Model Jade engine"
+#    start-stop-daemon --background --start --pidfile ${PID_FILE} --make-pidfile -c ${RUN_AS} --startas #SOME COMMAND# -- > /dev/null 2>&1
+#    OR DO STUFF
+    log_end_msg 0
+}
+
+stop() {
+    log_daemon_msg "Stopping Ymaship Model Jade engine"
+#    if [ -f ${PID_FILE} ]; then
+#        start-stop-daemon --stop --pidfile ${PID_FILE}
+#	 DO STUFF	
+#        rm -f ${PID_FILE}
+ #   fi
+    log_end_msg 0
+}
+
+export PATH="${PATH:+$PATH:}/usr/sbin:/sbin"
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+
+    restart)
+        stop
+        sleep 1
+        start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

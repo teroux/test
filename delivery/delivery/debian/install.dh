@@ -1,0 +1,6 @@
+#Put here all installations instructions
+#ex: install/file etc/#PACKAGE_NAME#/
+#bin/*     opt/#PACKAGE_NAME#/
+
+#Add more here...
+webapps/*           opt/#PACKAGE_NAME#/

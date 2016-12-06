@@ -1,0 +1,5 @@
+#This file is used to create links automatically using this syntax 
+#TARGET LINK
+#ex: /opt/#PACKAGE_NAME#/some_script /usr/bin/some_script
+opt/#PACKAGE_NAME#/#APP_NAME#.xml etc/tomcat7/Catalina/localhost/#APP_NAME#.xml
+

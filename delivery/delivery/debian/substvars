@@ -1,0 +1,2 @@
+shlibs:Depends=debconf (>= 0.5) | debconf-2.0, adduser
+misc:Depends=sun-java6-jre

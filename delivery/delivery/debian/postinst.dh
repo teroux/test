@@ -1,0 +1,64 @@
+#!/bin/bash
+set -e
+
+# postinst script for #PACKAGE_NAME# 
+#
+# see: dh_installdeb(1)
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+#
+
+APP_NAME="#APP_NAME#"
+WAR_NAME="logs-provider-1.0"
+PACKAGE_NAME="#PACKAGE_NAME#"
+SOURCE_OLDVERSION="$2"
+SOURCE_VERSION="#VERSION#"
+SOURCE_REVISION="#REVISION#"
+USER="#USER#"
+GROUP="#GROUP#"
+DB_NAME="#DB_NAME#"
+
+# Use this to activate debug ;)
+#export DEBCONF_DEBUG="developer"
+# Uncomment for interactive installation (where questions are asked)à
+. /usr/share/debconf/confmodule
+
+#db_get ymagis-lysa/database_passwd
+#DB_PWD=${RET}
+
+
+case "$1" in
+    configure|reconfigure)
+        # Stopping service !
+
+	# Modify rights and permission !
+	echo "> Modifying rights and permission on logs and locks"
+
+        echo "${SOURCE_VERSION}"  > /opt/${PACKAGE_NAME}/version
+        echo "${SOURCE_REVISION}" > /opt/${PACKAGE_NAME}/revision
+
+	# Add here other commands....
+        /etc/init.d/tomcat7 start
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+	# Add here bash commands....
+    ;;
+
+    *)
+        echo "postinst called with unknown argument '$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0;

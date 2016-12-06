@@ -1,0 +1,9 @@
+# This file contains system cronjobs that will be installed in /etc/cron.d
+
+
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=toto@ymagis.com
+
+#min hours dayOfMonth Month dayOfWeek user command
+#* *  * * *   #USER# COMMAND

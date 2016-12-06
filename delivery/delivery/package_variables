@@ -1,0 +1,6 @@
+#!/bin/bash
+# One variable per line
+APP_NAME=logs-provider
+PACKAGE_NAME=ymagis-${APP_NAME}
+USER=tomcat7
+GROUP=tomcat7

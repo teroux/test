@@ -6,7 +6,8 @@
     <parent>
         <artifactId>travis</artifactId>
         <groupId>com.ymagis.test</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>delivery</artifactId>
     <version>1.0</version>

@@ -3,4 +3,4 @@
 #bin/*     opt/#PACKAGE_NAME#/
 
 #Add more here...
-webapps/*           opt/#PACKAGE_NAME#/
+#webapps/*           opt/#PACKAGE_NAME#/

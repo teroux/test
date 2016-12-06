@@ -58,7 +58,7 @@ fi
 
 echo "> Building package"
 # Tagging changelog
-dch -v ${VERSION}-r${REVISION} "New upstream release"
+#dch -v ${VERSION}-r${REVISION} "New upstream release"
 rm -f ../*.dsc ../*.changes ../*.tar.gz ../*.deb
  
 dpkg-buildpackage -us -uc -rfakeroot -edevteam@ymagis.com

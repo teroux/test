@@ -1,6 +1,7 @@
 language: java
 script:
 - mvn clean install
-- bash delivery/delivery/debbuild.sh
+- cd delivery/delivery/
+- bash debbuild.sh
 
 dist: trusty

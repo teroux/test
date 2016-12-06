@@ -2,6 +2,7 @@ language: java
 script:
 - mvn clean install
 - cd delivery/delivery/
+- apt-get install debhelper dh-virtualenv
 - bash debbuild.sh
 
 dist: trusty

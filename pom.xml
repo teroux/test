@@ -8,11 +8,32 @@
     <artifactId>travis</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <name>Travis</name>
+    <description>toto</description>
 
     <modules>
         <module>ymagis-travis</module>
         <module>delivery</module>
     </modules>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7.2</version>
+                <configuration>
+                    <argLine>-Dsun.lang.ClassLoader.allowArraySyntax=true</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
